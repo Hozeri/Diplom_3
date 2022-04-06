@@ -68,13 +68,13 @@ public class RegistrationPage {
     //метод проверки подсказки "Некорректный пароль"
     @Step
     public void checkTextOfIncorrectPasswordHint() {
-        $(incorrectPasswordHint).shouldHave(text("Некорректный пароль"));
+        incorrectPasswordHint.shouldHave(text("Некорректный пароль"));
     }
 
     //метод клика по кнопке "Вход" на странице регистрации
     @Step
     public void clickRegistrationPageEntranceButton() {
-        $(registrationPageEntranceButton).click();
+        registrationPageEntranceButton.click();
     }
 
     //общий метод регистрации пользователя

@@ -20,13 +20,13 @@ public class AccountPage {
     //метод проверки существования ссылки "Профиль"
     @Step
     public void checkHeadingProfileExistance() {
-        $(headingProfile).exists();
+        headingProfile.exists();
     }
 
     //метод клика по кнопке "Выход"
     @Step
     public void clickLogoffButton() {
-        $(logoffButton).click();
+        logoffButton.click();
     }
 
 }

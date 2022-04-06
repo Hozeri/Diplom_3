@@ -31,7 +31,7 @@ public class LoginPage {
     //метод проверки существования заголовка "Вход"
     @Step
     public void checkHeadingEntranceExistance() {
-        $(headingEntrance).exists();
+        headingEntrance.exists();
     }
 
     //метод заполнения поля ввода "Email"

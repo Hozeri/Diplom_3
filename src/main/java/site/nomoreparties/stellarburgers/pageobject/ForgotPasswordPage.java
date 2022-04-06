@@ -19,7 +19,7 @@ public class ForgotPasswordPage {
     //метод клика по кнопке "Вход" на странице регистрации
     @Step
     public void clickForgotPasswordPageEntranceButton() {
-        $(forgotPasswordPageEntranceButton).click();
+        forgotPasswordPageEntranceButton.click();
     }
 
 }

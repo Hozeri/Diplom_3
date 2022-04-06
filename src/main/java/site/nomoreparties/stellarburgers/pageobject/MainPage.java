@@ -52,73 +52,73 @@ public class MainPage {
     //метод клика по кнопке "Войти в аккаунт"
     @Step
     public void clickMainPageEntranceButton() {
-        $(mainPageEntranceButton).click();
+        mainPageEntranceButton.click();
     }
 
     //метод клика по кнопке "Личный Кабинет"
     @Step
     public void clickAccountButton() {
-        $(accountButton).click();
+        accountButton.click();
     }
 
     //метод проверки существования кнопки "Оформить заказ"
     @Step
     public void checkMakeOrderButtonExists() {
-        $(makeOrderButton).exists();
+        makeOrderButton.exists();
     }
 
     //метод клика по лого Stellar Burgers
     @Step
     public void clickHeaderLogoButton() {
-        $(headerLogoButton).click();
+        headerLogoButton.click();
     }
 
     //метод клика по кнопке "Конструктор"
     @Step
     public void clickHeaderConstructorButton() {
-        $(headerConstructorButton).click();
+        headerConstructorButton.click();
     }
 
     //метод проверки существования заголовка "Соберите бургер"
     @Step
     public void checkHeadingMakeABurgerExists() {
-        $(headingMakeABurger).exists();
+        headingMakeABurger.exists();
     }
 
     //метод клика по вкладке "Булки"
     @Step
     public void clickBunsTab() {
-        $(bunsTab).click();
+        bunsTab.click();
     }
 
     //метод клика по вкладке "Соусы"
     @Step
     public void clickSaucesTab() {
-        $(saucesTab).click();
+        saucesTab.click();
     }
 
     //метод клика по вкладке "Соусы"
     @Step
     public void clickFillingsTab() {
-        $(fillingsTab).click();
+        fillingsTab.click();
     }
 
     //метод проверки того, что вкладка "Булки" выбрана
     @Step
     public void checkBunsTabIsSelected() {
-        $(bunsTab).shouldHave(Condition.cssClass("tab_tab_type_current__2BEPc"));
+        bunsTab.shouldHave(Condition.cssClass("tab_tab_type_current__2BEPc"));
     }
 
     //метод проверки того, что вкладка "Соусы" выбрана
     @Step
     public void checkSaucesTabIsSelected() {
-        $(saucesTab).shouldHave(Condition.cssClass("tab_tab_type_current__2BEPc"));
+        saucesTab.shouldHave(Condition.cssClass("tab_tab_type_current__2BEPc"));
     }
 
     //метод проверки того, что вкладка "Начинки" выбрана
     @Step
     public void checkFillingsTabIsSelected() {
-        $(fillingsTab).shouldHave(Condition.cssClass("tab_tab_type_current__2BEPc"));
+        fillingsTab.shouldHave(Condition.cssClass("tab_tab_type_current__2BEPc"));
     }
 
     //общий метод клика по лого и проверки существования заголовка "Соберите бургер"
