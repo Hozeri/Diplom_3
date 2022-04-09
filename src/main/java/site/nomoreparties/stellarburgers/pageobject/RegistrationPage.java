@@ -39,46 +39,46 @@ public class RegistrationPage {
     public static final String REGISTRATION_URL = "https://stellarburgers.nomoreparties.site/register";
 
     //метод заполнения поля ввода "Имя"
-    @Step
+    @Step("Заполнение поля ввода \"Имя\"")
     public void setUserName(String name) {
         userName.click();
         userName.setValue(name);
     }
 
     //метод заполнения поля ввода "Email"
-    @Step
+    @Step("Заполнение поля ввода \"Email\"")
     public void setUserEmail(String email) {
         userEmail.click();
         userEmail.setValue(email);
     }
 
     //метод заполнения поля ввода "Пароль"
-    @Step
+    @Step("Заполнение поля ввода \"Пароль\"")
     public void setUserPassword(String password) {
         userPassword.click();
         userPassword.setValue(password);
     }
 
     //метод клика по кнопке "Зарегистрироваться"
-    @Step
+    @Step("Клик по кнопке \"Зарегистрироваться\"")
     public void clickRegistrationButton() {
         registrationButton.click();
     }
 
-    //метод проверки подсказки "Некорректный пароль"
-    @Step
-    public void checkTextOfIncorrectPasswordHint() {
-        incorrectPasswordHint.shouldHave(text("Некорректный пароль"));
+    //метод получения элемента подсказки "Некорректный пароль"
+    @Step("Получения элемента подсказки \"Некорректный пароль\"")
+    public SelenideElement getIncorrectPasswordHintElement() {
+        return incorrectPasswordHint;
     }
 
     //метод клика по кнопке "Вход" на странице регистрации
-    @Step
+    @Step("Клик по кнопке \"Вход\" на странице регистрации")
     public void clickRegistrationPageEntranceButton() {
         registrationPageEntranceButton.click();
     }
 
     //общий метод регистрации пользователя
-    @Step
+    @Step("Регистрация пользователя")
     public void userRegistration(String name, String email, String password) {
         setUserName(name);
         setUserEmail(email);

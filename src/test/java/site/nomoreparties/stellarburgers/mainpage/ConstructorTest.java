@@ -2,6 +2,8 @@ package site.nomoreparties.stellarburgers.mainpage;
 
 import com.UserOperations;
 import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.SelenideElement;
+import io.qameta.allure.junit4.DisplayName;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -11,11 +13,12 @@ import site.nomoreparties.stellarburgers.pageobject.MainPage;
 
 import java.util.Map;
 
+import static com.codeborne.selenide.Condition.cssClass;
 import static com.codeborne.selenide.Selenide.closeWindow;
 import static com.codeborne.selenide.Selenide.open;
 
 @RunWith(Parameterized.class)
-public class ConstructorTests {
+public class ConstructorTest {
 
     UserOperations userOperations = new UserOperations();
     Map<String, String> userData = userOperations.register();
@@ -24,11 +27,11 @@ public class ConstructorTests {
 
     private String driver;
 
-    public ConstructorTests(String driver) {
+    public ConstructorTest(String driver) {
         this.driver = driver;
     }
 
-    @Parameterized.Parameters
+    @Parameterized.Parameters(name = "Тестовые данные: {0} {1}")
     public static Object[][] getDriverForTests() {
         return new Object[][]{
                 {"src/resourses/chromedriver.exe"},
@@ -48,25 +51,31 @@ public class ConstructorTests {
     }
 
     @Test
+    @DisplayName("Проверка перехода к вкладке \"Булки\"")
     public void checkBunsTabIsSelectedTest() {
         MainPage mainPage = open(MainPage.MAIN_URL, MainPage.class);
         mainPage.clickSaucesTab();
         mainPage.clickBunsTab();
-        mainPage.checkBunsTabIsSelected();
+        SelenideElement element = mainPage.getBunsTabElement();
+        element.shouldHave(cssClass("tab_tab_type_current__2BEPc"));
     }
 
     @Test
+    @DisplayName("Проверка перехода к вкладке \"Соусы\"")
     public void checkSauceTabIsSelectedTest() {
         MainPage mainPage = open(MainPage.MAIN_URL, MainPage.class);
         mainPage.clickSaucesTab();
-        mainPage.checkSaucesTabIsSelected();
+        SelenideElement element = mainPage.getSaucesTabElement();
+        element.shouldHave(cssClass("tab_tab_type_current__2BEPc"));
     }
 
     @Test
+    @DisplayName("Проверка перехода к вкладке \"Начинки\"")
     public void checkFillingsTabIsSelectedTest() {
         MainPage mainPage = open(MainPage.MAIN_URL, MainPage.class);
         mainPage.clickFillingsTab();
-        mainPage.checkFillingsTabIsSelected();
+        SelenideElement element = mainPage.getFillingsTabElement();
+        element.shouldHave(cssClass("tab_tab_type_current__2BEPc"));
     }
 
 }

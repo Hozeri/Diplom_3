@@ -17,7 +17,7 @@ public class ForgotPasswordPage {
     public static final String FORGOT_PASSWORD_URL = "https://stellarburgers.nomoreparties.site/forgot-password";
 
     //метод клика по кнопке "Вход" на странице регистрации
-    @Step
+    @Step("Клик по кнопке \"Вход\" на странице регистрации")
     public void clickForgotPasswordPageEntranceButton() {
         forgotPasswordPageEntranceButton.click();
     }

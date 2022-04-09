@@ -50,89 +50,89 @@ public class MainPage {
     public static final String MAIN_URL = "https://stellarburgers.nomoreparties.site";
 
     //метод клика по кнопке "Войти в аккаунт"
-    @Step
+    @Step("Клик по кнопке \"Войти в аккаунт\"")
     public void clickMainPageEntranceButton() {
         mainPageEntranceButton.click();
     }
 
     //метод клика по кнопке "Личный Кабинет"
-    @Step
+    @Step("Клик по кнопке \"Личный Кабинет\"")
     public void clickAccountButton() {
         accountButton.click();
     }
 
-    //метод проверки существования кнопки "Оформить заказ"
-    @Step
-    public void checkMakeOrderButtonExists() {
-        makeOrderButton.exists();
+    //метод получения элемента кнопки "Оформить заказ"
+    @Step("Получение элемента кнопки \"Оформить заказ\"")
+    public SelenideElement getMakeOrderButtonElement() {
+        return makeOrderButton;
     }
 
     //метод клика по лого Stellar Burgers
-    @Step
+    @Step("Клик по лого Stellar Burgers")
     public void clickHeaderLogoButton() {
         headerLogoButton.click();
     }
 
     //метод клика по кнопке "Конструктор"
-    @Step
+    @Step("Клик по кнопке \"Конструктор\"")
     public void clickHeaderConstructorButton() {
         headerConstructorButton.click();
     }
 
-    //метод проверки существования заголовка "Соберите бургер"
-    @Step
-    public void checkHeadingMakeABurgerExists() {
-        headingMakeABurger.exists();
+    //метод возврата элемента заголовка "Соберите бургер"
+    @Step("Получение элемента заголовка \"Соберите бургер\"")
+    public SelenideElement getHeadingMakeABurgerElement() {
+        return headingMakeABurger;
     }
 
     //метод клика по вкладке "Булки"
-    @Step
+    @Step("Клик по вкладке \"Булки\"")
     public void clickBunsTab() {
         bunsTab.click();
     }
 
     //метод клика по вкладке "Соусы"
-    @Step
+    @Step("Клик по вкладке \"Соусы\"")
     public void clickSaucesTab() {
         saucesTab.click();
     }
 
-    //метод клика по вкладке "Соусы"
-    @Step
+    //метод клика по вкладке "Начинки"
+    @Step("Клик по вкладке \"Начинки\"")
     public void clickFillingsTab() {
         fillingsTab.click();
     }
 
-    //метод проверки того, что вкладка "Булки" выбрана
-    @Step
-    public void checkBunsTabIsSelected() {
-        bunsTab.shouldHave(Condition.cssClass("tab_tab_type_current__2BEPc"));
+    //метод получение элемента вкладки "Булки"
+    @Step("Получение элемента вкладки \"Булки\"")
+    public SelenideElement getBunsTabElement() {
+        return bunsTab;
     }
 
-    //метод проверки того, что вкладка "Соусы" выбрана
-    @Step
-    public void checkSaucesTabIsSelected() {
-        saucesTab.shouldHave(Condition.cssClass("tab_tab_type_current__2BEPc"));
+    //метод получение элемента вкладки "Соусы"
+    @Step("Получение элемента вкладки \"Соусы\"")
+    public SelenideElement getSaucesTabElement() {
+        return saucesTab;
     }
 
-    //метод проверки того, что вкладка "Начинки" выбрана
-    @Step
-    public void checkFillingsTabIsSelected() {
-        fillingsTab.shouldHave(Condition.cssClass("tab_tab_type_current__2BEPc"));
+    //метод получение элемента вкладки "Начинки"
+    @Step("Получение элемента вкладки \"Начинки\"")
+    public SelenideElement getFillingsTabElement() {
+        return fillingsTab;
     }
 
-    //общий метод клика по лого и проверки существования заголовка "Соберите бургер"
-    @Step
-    public void clickHeaderLogoButtonAndCheckHeadingMakeABurgerExists() {
+    //общий метод клика по лого и получения элемента заголовка "Соберите бургер"
+    @Step("Клик по лого и получения элемента заголовка \"Соберите бургер\"")
+    public SelenideElement clickHeaderLogoButtonAndGetHeadingMakeABurgerElement() {
         clickHeaderLogoButton();
-        checkHeadingMakeABurgerExists();
+        return getHeadingMakeABurgerElement();
     }
 
-    //общий метод клика по кнопке "Конструктор" и проверки существования заголовка "Соберите бургер"
-    @Step
-    public void clickHeaderConstructorButtonAndCheckHeadingMakeABurgerExists() {
+    //общий метод клика по кнопке "Конструктор" и получения элемента заголовка "Соберите бургер"
+    @Step("Клик по кнопке \"Конструктор\" и получения элемента заголовка \"Соберите бургер\"")
+    public SelenideElement clickHeaderConstructorButtonAndGetHeadingMakeABurgerElement() {
         clickHeaderConstructorButton();
-        checkHeadingMakeABurgerExists();
+        return getHeadingMakeABurgerElement();
     }
 
 

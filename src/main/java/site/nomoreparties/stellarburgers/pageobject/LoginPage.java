@@ -28,34 +28,34 @@ public class LoginPage {
     //переменная для хранения url страницы восстановления пароля
     public static final String LOGIN_URL = "https://stellarburgers.nomoreparties.site/login";
 
-    //метод проверки существования заголовка "Вход"
-    @Step
-    public void checkHeadingEntranceExistance() {
-        headingEntrance.exists();
+    //метод получения элемента заголовка "Вход"
+    @Step("Получение элемента заголовка \"Вход\"")
+    public SelenideElement getHeadingEntranceElement() {
+        return headingEntrance;
     }
 
     //метод заполнения поля ввода "Email"
-    @Step
+    @Step("Заполнение поля ввода \"Email\"")
     public void setUserEmail(String email) {
         userEmail.click();
         userEmail.setValue(email);
     }
 
     //метод заполнения поля ввода "Пароль"
-    @Step
+    @Step("Заполнение поля ввода \"Пароль\"")
     public void setUserPassword(String password) {
         userPassword.click();
         userPassword.setValue(password);
     }
 
     //метод клика по кнопке "Вход"
-    @Step
+    @Step("Клик по кнопке \"Вход\"")
     public void clickLoginButton() {
         loginButton.click();
     }
 
     //общий метод логина пользователя
-    @Step
+    @Step("Логин пользователя")
     public void loginUser(String email, String password) {
         setUserEmail(email);
         setUserPassword(password);
