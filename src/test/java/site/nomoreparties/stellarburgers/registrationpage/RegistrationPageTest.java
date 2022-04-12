@@ -1,9 +1,11 @@
 package site.nomoreparties.stellarburgers.registrationpage;
 
+import com.UserOperations;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.SelenideElement;
 import com.github.javafaker.Faker;
+import com.model.Tokens;
 import io.qameta.allure.junit4.DisplayName;
 import org.junit.After;
 import org.junit.Before;
@@ -20,6 +22,7 @@ import static com.codeborne.selenide.Selenide.*;
 @RunWith(Parameterized.class)
 public class RegistrationPageTest {
 
+    UserOperations userOperations = new UserOperations();
     Faker faker = new Faker();
     final String email = faker.internet().emailAddress();
     final String password = faker.internet().password();
@@ -47,6 +50,8 @@ public class RegistrationPageTest {
 
     @After
     public void tearDown() {
+        userOperations.authorize(email, password);
+        userOperations.delete();
         closeWindow();
     }
 

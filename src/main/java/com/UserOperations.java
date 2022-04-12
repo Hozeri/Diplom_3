@@ -2,6 +2,8 @@ package com;
 
 import com.model.Tokens;
 import com.model.UserRegisterResponse;
+import io.restassured.response.Response;
+import io.restassured.response.ValidatableResponse;
 import org.apache.commons.lang3.RandomStringUtils;
 
 import java.util.HashMap;
@@ -70,11 +72,27 @@ public class UserOperations {
         }
         given()
                 .spec(Base.getBaseSpec())
-                .auth().oauth2(Tokens.getAccessToken())
+                .auth().oauth2(Tokens.getAccessToken().substring(7))
                 .when()
                 .delete("auth/user")
                 .then()
+                .log().all()
                 .statusCode(202);
+    }
+
+    public void authorize(String email, String password) {
+        Map<String, String> inputDataMap = new HashMap<>();
+        inputDataMap.put("email", email);
+        inputDataMap.put("password", password);
+        Response response = given()
+                .spec(Base.getBaseSpec())
+                .body(inputDataMap)
+                .when()
+                //.log().all()
+                .post("auth/login")
+                .then()
+                .extract().response();
+        Tokens.setAccessToken(response.path("accessToken"));
     }
 
 }

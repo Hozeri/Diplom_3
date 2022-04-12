@@ -49,6 +49,7 @@ public class LoginPageTest {
 
     @After
     public void tearDown() {
+        userOperations.delete();
         closeWindow();
     }
 

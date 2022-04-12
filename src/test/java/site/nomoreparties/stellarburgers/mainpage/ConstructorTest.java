@@ -1,6 +1,5 @@
 package site.nomoreparties.stellarburgers.mainpage;
 
-import com.UserOperations;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.junit4.DisplayName;
@@ -11,8 +10,6 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import site.nomoreparties.stellarburgers.pageobject.MainPage;
 
-import java.util.Map;
-
 import static com.codeborne.selenide.Condition.cssClass;
 import static com.codeborne.selenide.Selenide.closeWindow;
 import static com.codeborne.selenide.Selenide.open;
@@ -20,12 +17,7 @@ import static com.codeborne.selenide.Selenide.open;
 @RunWith(Parameterized.class)
 public class ConstructorTest {
 
-    UserOperations userOperations = new UserOperations();
-    Map<String, String> userData = userOperations.register();
-    String userEmail = userData.get("email");
-    String userPassword = userData.get("password");
-
-    private String driver;
+    private final String driver;
 
     public ConstructorTest(String driver) {
         this.driver = driver;

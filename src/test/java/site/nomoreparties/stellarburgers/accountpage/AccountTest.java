@@ -48,6 +48,7 @@ public class AccountTest {
 
     @After
     public void tearDown() {
+        userOperations.delete();
         closeWindow();
     }
 
