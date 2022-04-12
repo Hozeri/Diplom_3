@@ -88,7 +88,6 @@ public class UserOperations {
                 .spec(Base.getBaseSpec())
                 .body(inputDataMap)
                 .when()
-                //.log().all()
                 .post("auth/login")
                 .then()
                 .extract().response();
